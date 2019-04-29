@@ -1,4 +1,4 @@
 X -> _
 Y -> 11
 S -> 12.01
-X -> Y
+El valor ya existe

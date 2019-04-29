@@ -14,10 +14,14 @@ public:
   int val1;
   double val2;
   string val3;
-  vector<ValorOz> reg;
+  string rec;
 public:
   ValorOz(string _id, string _val, string _type); //Constructor de la clase
   void showInfo(); //Muestra la información que tiene el ValorOz
+
+  bool operator==( const ValorOz& v1){
+    return id == v1.id;
+  }
 };
 
 #endif

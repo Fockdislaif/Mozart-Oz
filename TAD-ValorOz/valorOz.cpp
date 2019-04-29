@@ -30,6 +30,10 @@ ValorOz :: ValorOz(string _id, string _val, string _type){
     id = _id;
     type = _type;
     val3 = _val;
+  }else if( _type == "record" ){
+    id = _id;
+    type = _type;
+    rec = _val;
   }
 }
 
