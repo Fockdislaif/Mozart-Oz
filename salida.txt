@@ -1,3 +1,5 @@
-X -> _
-Y -> 11
-S -> 12.01
+var X -> Y
+var Z -> Y
+int Y -> 11
+float S -> 12.01
+var A -> Y

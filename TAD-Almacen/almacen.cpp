@@ -39,22 +39,26 @@ vector<string> Almacen :: existVal(ValorOz& valOz){
   return salida;
 }
 
-ValorOz Almacen :: findFather(ValorOz son){
+string Almacen :: findFather(ValorOz son){
   /*
   El objetivo de esta funcion es encontrar la variable padre para un valor cuando
   se haga la ligadura o linkeamiento con una variable para así mantener el arbol
   a 2 niveles.
   */
-  string type = "var";
+  string type, father = son.id;
   vector<ValorOz>::iterator it;
+  it = find(almacen.begin(), almacen.end(), son);
+  type = it->type;
 
-  while(type == "var"){
+  while( type == "var" ){
+    son.id = it->val3;
     it = find(almacen.begin(), almacen.end(), son);
-    son = *it;
     type = it->type;
+    father = it->id;
   }
 
-  return son;
+
+  return father;
 }
 
 void Almacen :: addVal( ValorOz& valOz ){
@@ -66,7 +70,12 @@ void Almacen :: addVal( ValorOz& valOz ){
   */
   vector<string> info = existVal(valOz);
   if( info[0] == "none"){
-    almacen.push_back(valOz);
+    if( valOz.type != "var" ){
+      almacen.push_back(valOz);
+    }else{
+      valOz.val3 = findFather( ValorOz(valOz.val3) );
+      almacen.push_back(valOz);
+    }
   }else{
     /*
     Si entra en este else, significa que la variable existe, por lo tanto se debe
@@ -81,8 +90,24 @@ void Almacen :: addVal( ValorOz& valOz ){
           - Si no es el mismo entonces da un error y finaliza.
     */
     if(info[0] == "unLinked"){
-      /* */
+      /*
+      Si la variable está sin ligar entonces se verifica si el tipo de la variable
+      a la que apunta es de tipo "var" o no
+      */
+      if( valOz.type == "var" ){
+        /*
+        Si la variable a la que apunta es tipo var entonces se usa la funcion
+        findFather para encontrar el nodo padre para mantener el arbol a 2 niveles
+        */
+        valOz.val3 = findFather( ValorOz(valOz.val3) );
+        vector<ValorOz>::iterator it;
+        it = find(almacen.begin(), almacen.end(), valOz);
+        int dist = it-almacen.begin();
+        almacen[ dist ] = valOz;
 
+      }else{
+        //...
+      }
     }
   }
 }

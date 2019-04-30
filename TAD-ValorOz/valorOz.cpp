@@ -4,6 +4,10 @@
 
 using namespace std;
 
+ValorOz :: ValorOz(string _id){
+  id = _id;
+}
+
 ValorOz :: ValorOz(string _id, string _val, string _type){
   /*
   Antes de hacer la asignación se debe verificar un par de cosas:
@@ -38,7 +42,7 @@ ValorOz :: ValorOz(string _id, string _val, string _type){
 }
 
 void ValorOz :: showInfo(){
-  cout << id << " -> ";
+  cout << type << " " << id << " -> ";
   if( type == "unLinked" ){
     cout << "_" << "\n";
   }else if( type == "int" ){
