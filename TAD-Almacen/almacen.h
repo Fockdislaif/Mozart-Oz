@@ -15,6 +15,7 @@ private:
   vector<ValorOz> almacen;
 public:
   Almacen();
+  ValorOz findFather(ValorOz son);
   vector<string> existVal(ValorOz& valOz);
   void addVal(ValorOz& valOz);
   void showVals();

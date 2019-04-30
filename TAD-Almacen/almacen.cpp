@@ -39,6 +39,24 @@ vector<string> Almacen :: existVal(ValorOz& valOz){
   return salida;
 }
 
+ValorOz Almacen :: findFather(ValorOz son){
+  /*
+  El objetivo de esta funcion es encontrar la variable padre para un valor cuando
+  se haga la ligadura o linkeamiento con una variable para así mantener el arbol
+  a 2 niveles.
+  */
+  string type = "var";
+  vector<ValorOz>::iterator it;
+
+  while(type == "var"){
+    it = find(almacen.begin(), almacen.end(), son);
+    son = *it;
+    type = it->type;
+  }
+
+  return son;
+}
+
 void Almacen :: addVal( ValorOz& valOz ){
   /*
     Esta funcion añade valores Oz al almacen, para esto, lo que hace es
@@ -50,8 +68,21 @@ void Almacen :: addVal( ValorOz& valOz ){
   if( info[0] == "none"){
     almacen.push_back(valOz);
   }else{
+    /*
+    Si entra en este else, significa que la variable existe, por lo tanto se debe
+    modificar el valorOz que se ingreso con respecto a la variable que desea representar.
+
+    - Para poder hacer esto se debe verificar si la variable no esta ligada.
+        - En caso de que no este ligada, entonces se hace la ligadura con el tipo
+        y la variable (a un solo nivel).
+        - En caso de que este ligada, entonces se pregunta si el valor que tiene es
+        el mismo.
+          - Si es el mismo no se hace nada.
+          - Si no es el mismo entonces da un error y finaliza.
+    */
     if(info[0] == "unLinked"){
-      //Llamar a la funcion que modifica el valor que tenga en el almacen
+      /* */
+
     }
   }
 }
