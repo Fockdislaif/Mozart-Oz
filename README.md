@@ -12,5 +12,42 @@
 * Análisis y comparación en términos de complejidad computacional de diferentes estrategias de representación para un mismo Tipo Abstracto de Dato.
 * Diseño e implementación de operaciones generales sobre un Tipo Abstracto de Dato.
 
-## Bibliografía
-* Tipos Abstractos de Datos (TAD's) en C++ <http://www.udb.edu.sv/udb/archivo/guia/informatica-ingenieria/programacion-ii/2013/i/guia-12.pdf>
+## To-Do List
+* ~~Mantener la ligadura de las variables a un solo nivel~~
+* Implementar los registros o "records". (**Arbol**)
+* Implementar funcion que verifique el nivel de las variables en el almacen.
+
+## Notas del proyecto
+* Hasta ahora hace la ligadura y mantiene el arbol a 2 niveles desde el nodo padre hasta los nodos hijos cuando apuntan hacia el, sin embargo, esto solo sucede cuando las variables son creadas previamente y se hace desde el mas viejo al mas nuevo. Ejemplo:
+```
+Primer caso:
+Entrada:
+X=_
+Y=_
+Z=_
+Y=X
+Z=Y
+A=Z
+
+Almacen:
+X -> _
+Y -> X
+Z -> X
+A -> X
+
+Segundo caso:
+X=_
+Y=_
+Z=_
+A=Z
+Z=Y
+Y=X
+
+Almacen:
+X -> _
+Y -> X
+Z -> Y
+A -> Z
+
+Lo ideal es que se quedaran las variables como en el primer caso y no como se ve en el segundo almacen.
+```
