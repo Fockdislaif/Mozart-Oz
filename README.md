@@ -50,5 +50,5 @@ Y -> X
 Z -> Y
 A -> Z
 
-Lo ideal es que se quedaran las variables como en el primer caso y no como se ve en el segundo almacen.
+Lo ideal es que se quedaran las variables como en el primer caso y no como se ve en el segundo almacen. (Ambos casos son diferentes)
 ```
