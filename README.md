@@ -20,6 +20,7 @@
 ## Notas del proyecto
 * Hasta ahora hace la ligadura y mantiene el arbol a 2 niveles desde el nodo padre hasta los nodos hijos cuando apuntan hacia el, sin embargo, esto solo sucede cuando las variables son creadas previamente y se hace desde el mas viejo al mas nuevo. Ejemplo:
 ```
+Ambos casos son diferentes
 Primer caso
 Entrada:
 X=_
@@ -50,5 +51,5 @@ Y -> X
 Z -> Y
 A -> Z
 
-Lo ideal es que se quedaran las variables como en el primer caso y no como se ve en el segundo almacen. (Ambos casos son diferentes)
+Lo ideal es que se quedaran las variables como en el primer caso y no como se ve en el segundo almacen.
 ```
