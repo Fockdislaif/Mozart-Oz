@@ -1,4 +1,2 @@
-unLinked X -> _
-var Y -> X
-var Z -> Y
-var A -> Z
+X -> 10
+Y -> X

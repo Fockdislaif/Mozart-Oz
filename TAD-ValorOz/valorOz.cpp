@@ -42,7 +42,7 @@ ValorOz :: ValorOz(string _id, string _val, string _type){
 }
 
 void ValorOz :: showInfo(){
-  cout << type << " " << id << " -> ";
+  cout << id << " -> ";
   if( type == "unLinked" ){
     cout << "_" << "\n";
   }else if( type == "int" ){

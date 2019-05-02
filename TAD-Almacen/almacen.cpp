@@ -98,15 +98,27 @@ void Almacen :: addVal( ValorOz& valOz ){
         /*
         Si la variable a la que apunta es tipo var entonces se usa la funcion
         findFather para encontrar el nodo padre para mantener el arbol a 2 niveles
+        y así saber que una variable no puede apuntar a una variable hija que apunte a
+        el mismo, así se evita un error de iteraciones infinitas.
         */
-        valOz.val3 = findFather( ValorOz(valOz.val3) );
+        if( findFather( ValorOz(valOz.val3) ) != valOz.id ){
+          valOz.val3 = findFather( ValorOz(valOz.val3) );
+          vector<ValorOz>::iterator it;
+          it = find(almacen.begin(), almacen.end(), valOz);
+          int dist = it-almacen.begin();
+          almacen[ dist ] = valOz;
+        }
+
+      }else{
+        /*
+        En caso de que la variable este sin ligar y que el valor al que desee
+        ligarse ahora sea algo diferente de una variable es decir que es
+        un entero, un float o un registro (aún no se han implementado los registros) 
+        */
         vector<ValorOz>::iterator it;
         it = find(almacen.begin(), almacen.end(), valOz);
         int dist = it-almacen.begin();
         almacen[ dist ] = valOz;
-
-      }else{
-        //...
       }
     }
   }
