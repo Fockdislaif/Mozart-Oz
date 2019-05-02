@@ -13,7 +13,7 @@
 * Diseño e implementación de operaciones generales sobre un Tipo Abstracto de Dato.
 
 ## To-Do List
-* ~~Mantener la ligadura de las variables a un solo nivel~~
+* ~~Mantener la ligadura de las variables a un solo nivel (Entrada)~~
 * Implementar los registros o "records". (**Arbol**)
 * Implementar funcion que verifique el nivel de las variables en el almacen para mantener el árbol en dos niveles.
 
