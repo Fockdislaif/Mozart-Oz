@@ -15,7 +15,7 @@
 ## To-Do List
 * ~~Mantener la ligadura de las variables a un solo nivel~~
 * Implementar los registros o "records". (**Arbol**)
-* Implementar funcion que verifique el nivel de las variables en el almacen.
+* Implementar funcion que verifique el nivel de las variables en el almacen para mantener el árbol en dos niveles.
 
 ## Notas del proyecto
 * Hasta ahora hace la ligadura y mantiene el arbol a 2 niveles desde el nodo padre hasta los nodos hijos cuando apuntan hacia el, sin embargo, esto solo sucede cuando las variables son creadas previamente y se hace desde el mas viejo al mas nuevo. Ejemplo:
