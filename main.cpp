@@ -8,6 +8,8 @@
 
 using namespace std;
 
+bool fail = false;
+
 int main(){
   Operaciones o;
   Almacen a;
@@ -18,7 +20,12 @@ int main(){
     a.addVal(v);
 
     //v.showInfo();
+    if( fail ){
+      cout << "La ligadura ingresada no es permitida: " << line <<"\n";
+      break;
+    }
   }
+  cout << "- - Estado del almacen - -" << "\n";
   a.showVals();
 
   return 0;

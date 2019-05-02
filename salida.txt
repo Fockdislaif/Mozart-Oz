@@ -1,2 +1,4 @@
-X -> 10
+La ligadura ingresada no es permitida: X=Y
+- - Estado del almacen - -
+X -> _
 Y -> X

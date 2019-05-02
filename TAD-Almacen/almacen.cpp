@@ -6,6 +6,8 @@
 
 using namespace std;
 
+extern bool fail;
+
 Almacen :: Almacen(){
   vector<ValorOz> almacen;
 }
@@ -107,13 +109,15 @@ void Almacen :: addVal( ValorOz& valOz ){
           it = find(almacen.begin(), almacen.end(), valOz);
           int dist = it-almacen.begin();
           almacen[ dist ] = valOz;
+        }else{
+          fail = true;
         }
 
       }else{
         /*
         En caso de que la variable este sin ligar y que el valor al que desee
         ligarse ahora sea algo diferente de una variable es decir que es
-        un entero, un float o un registro (aún no se han implementado los registros) 
+        un entero, un float o un registro (aún no se han implementado los registros)
         */
         vector<ValorOz>::iterator it;
         it = find(almacen.begin(), almacen.end(), valOz);
