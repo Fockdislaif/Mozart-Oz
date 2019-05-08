@@ -31,7 +31,7 @@ string Operaciones :: wType(string s){
       registro está escrito en minuscula.
       variable está escrita en MAYUSCULA.
       int no tiene un '.'
-      float no tiene un '.'
+      float tiene un '.'
       unLinked es igual a _
   */
   string type = "unLinked";
